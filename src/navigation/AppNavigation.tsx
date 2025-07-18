@@ -4,7 +4,6 @@ import { HomeScreen } from '@/screens/HomeScreen';
 import { CounterScreen } from '@/screens/CounterScreen';
 import { ProfileScreen } from '@/screens/ProfileScreen';
 import { RootTabParamList } from './types';
-import { TabBarIcon } from '@/components/TabIcon';
 import { View, StyleSheet, Platform } from 'react-native';
 import { CustomTabBar } from '@/components/CustomTabBar';
 

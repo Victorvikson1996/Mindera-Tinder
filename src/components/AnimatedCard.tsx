@@ -1,17 +1,12 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
-  runOnJS,
-  useAnimatedGestureHandler
+  runOnJS
 } from 'react-native-reanimated';
-import {
-  Gesture,
-  GestureDetector,
-  PanGestureHandler
-} from 'react-native-gesture-handler';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { CatCard } from './CatCards';
 import { Cat } from '@/types/cattypes';
 
@@ -40,30 +35,32 @@ export const AnimatedCatCard: React.FC<CardProps> = ({
     ]
   }));
 
-  const gestureHandler = useAnimatedGestureHandler({
-    onStart: (_, ctx: any) => {
-      ctx.startX = translateX.value;
-    },
-    onActive: (event, ctx: any) => {
-      translateX.value = ctx.startX + event.translationX;
-    },
-    onEnd: (event) => {
+  const panGesture = Gesture.Pan()
+    .onUpdate((event) => {
+      translateX.value = event.translationX;
+    })
+    .onEnd((event) => {
       if (event.translationX > SWIPE_THRESHOLD) {
-        translateX.value = withSpring(width, {}, () => runOnJS(onSwipeRight)());
+        translateX.value = withSpring(width, {}, () => {
+          runOnJS(onSwipeRight)();
+          translateX.value = 0;
+        });
       } else if (event.translationX < -SWIPE_THRESHOLD) {
-        translateX.value = withSpring(-width, {}, () => runOnJS(onSwipeLeft)());
+        translateX.value = withSpring(-width, {}, () => {
+          runOnJS(onSwipeLeft)();
+          translateX.value = 0;
+        });
       } else {
         translateX.value = withSpring(0);
       }
-    }
-  });
+    });
 
   return (
-    <PanGestureHandler onGestureEvent={gestureHandler}>
+    <GestureDetector gesture={panGesture}>
       <Animated.View style={[styles.card, animatedStyle]}>
         <CatCard cat={cat} index={index} />
       </Animated.View>
-    </PanGestureHandler>
+    </GestureDetector>
   );
 };
 
