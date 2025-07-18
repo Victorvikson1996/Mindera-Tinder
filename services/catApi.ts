@@ -4,7 +4,7 @@ export interface CatBreed {
   description: string;
   temperament: string;
   origin: string;
-  image?: {
+  image: {
     url: string;
   };
 }

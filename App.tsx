@@ -7,7 +7,6 @@ export default function App() {
   const [cats, setCats] = useState<CatBreed[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  console.log(cats);
 
   useEffect(() => {
     fetchCatBreeds()
