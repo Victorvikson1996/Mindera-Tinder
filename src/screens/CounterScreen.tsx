@@ -4,7 +4,7 @@ import React from 'react';
 export const CounterScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.counterText}>03</Text>
+      <Text style={styles.counterText}>02</Text>
     </View>
   );
 };

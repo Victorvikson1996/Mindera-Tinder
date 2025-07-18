@@ -3,43 +3,15 @@ import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { fetchCatBreeds, CatBreed } from './services/catApi';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { AppNavigation } from '@/navigation/AppNavigation';
 
 export default function App() {
-  const [cats, setCats] = useState<CatBreed[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchCatBreeds()
-      .then(setCats)
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
-
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <StatusBar style='auto' />
-        <Text style={styles.title}>Cat Tinder</Text>
-        {loading && <Text>Loading cats...</Text>}
-        {error && <Text>Error: {error}</Text>}
-        <FlatList
-          data={cats}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View style={styles.catCard}>
-              {item.image?.url && (
-                <Image
-                  source={{ uri: item.image.url }}
-                  style={styles.catImage}
-                />
-              )}
-              <Text style={styles.catName}>{item.name}</Text>
-              <Text style={styles.catDesc}>{item.description}</Text>
-            </View>
-          )}
-        />
-      </View>
+      <NavigationContainer>
+        <AppNavigation />
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 }

@@ -4,58 +4,73 @@ import { Cat } from '@/types/cattypes';
 
 interface CatCardProps {
   cat: Cat;
+  index: number;
 }
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.88;
 
-export const CatCard: React.FC<CatCardProps> = React.memo(({ cat }) => (
+export const CatCard: React.FC<CatCardProps> = ({ cat, index }) => (
   <View style={styles.card}>
     <Image
       source={{ uri: cat.image?.url }}
       style={styles.image}
       resizeMode='cover'
     />
-    <View style={styles.infoContainer}>
-      <Text style={styles.breed}>{cat.name}</Text>
-      <Text style={styles.origin}>{cat.origin}</Text>
+    <View style={styles.footer}>
+      <View>
+        <Text style={styles.breed}>{cat.name}</Text>
+        <Text style={styles.origin}>{cat.origin}</Text>
+      </View>
+      <Text style={styles.index}>{index}</Text>
     </View>
   </View>
-));
+);
 
 const styles = StyleSheet.create({
   card: {
     width: CARD_WIDTH,
-    borderRadius: 20,
+    borderRadius: 22,
     overflow: 'hidden',
     backgroundColor: '#fff',
     elevation: 3,
     shadowColor: '#aaa',
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.17,
-    shadowRadius: 12,
+    shadowOpacity: 0.14,
+    shadowRadius: 16,
     alignSelf: 'center',
-    marginVertical: 24
+    marginVertical: 12
   },
   image: {
     width: '100%',
     height: CARD_WIDTH,
-    backgroundColor: '#eee'
+    backgroundColor: '#eee',
+    borderTopLeftRadius: 22,
+    borderTopRightRadius: 22
   },
-  infoContainer: {
-    padding: 18,
-    backgroundColor: 'white',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 18,
+    paddingVertical: 16,
+    backgroundColor: '#fff',
+    borderBottomLeftRadius: 22,
+    borderBottomRightRadius: 22
   },
   breed: {
-    fontSize: 21,
+    fontSize: 19,
     fontWeight: 'bold',
-    marginBottom: 4,
-    color: '#222'
+    color: '#222',
+    marginBottom: 2
   },
   origin: {
-    fontSize: 15,
-    color: '#888'
+    fontSize: 13,
+    color: '#bbb'
+  },
+  index: {
+    fontSize: 18,
+    color: '#222',
+    fontWeight: '700'
   }
 });

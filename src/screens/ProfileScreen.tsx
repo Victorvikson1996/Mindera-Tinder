@@ -4,11 +4,10 @@ import React from 'react';
 export const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
+      <Text style={styles.title}>03</Text>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -17,8 +16,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa'
   },
   title: {
-    fontSize: 32,
-    color: '#222',
+    fontSize: 72,
+    color: '#bbb',
     fontWeight: 'bold'
   }
 });
