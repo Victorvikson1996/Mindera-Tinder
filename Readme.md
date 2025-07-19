@@ -42,11 +42,3 @@ Here are some screenshots of the Cat Tinder app:
 ### 🐾 Home Screen
 
 ![Home](./src/screenshot/Home.png)
-
-### 😻
-
-![Profile](./src/screenshot/Profile.png)
-
-### 🐱
-
-![Counter](./src/screenshot/Counter.png)
