@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { Colors } from '@/utils/Colors';
 
 export const CatTinderHeader = () => {
   const [selected, setSelected] = useState<'fire' | 'star'>('fire');
@@ -17,7 +18,7 @@ export const CatTinderHeader = () => {
         <Ionicons
           name='flame'
           size={20}
-          color={selected === 'fire' ? '#ff5a76' : '#B0B0B0'}
+          color={selected === 'fire' ? Colors.paw : Colors.grey}
         />
       </TouchableOpacity>
 
@@ -31,7 +32,7 @@ export const CatTinderHeader = () => {
         <Ionicons
           name='star'
           size={20}
-          color={selected === 'star' ? '#ff5a76' : '#B0B0B0'}
+          color={selected === 'star' ? Colors.paw : Colors.grey}
         />
       </TouchableOpacity>
     </View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   activeIconWrapper: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

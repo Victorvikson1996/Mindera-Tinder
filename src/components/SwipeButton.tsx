@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { Colors } from '@/utils/Colors';
 
 interface ButtonProps {
   onLeft: () => void;
@@ -11,10 +12,10 @@ export const SwipeButtons: React.FC<ButtonProps> = React.memo(
   ({ onLeft, onRight }) => (
     <View style={styles.row}>
       <TouchableOpacity style={[styles.button, styles.red]} onPress={onLeft}>
-        <Ionicons name='close' size={36} color='#e75480' />
+        <Ionicons name='close' size={36} color={Colors.paw} />
       </TouchableOpacity>
       <TouchableOpacity style={[styles.button, styles.green]} onPress={onRight}>
-        <Ionicons name='heart' size={36} color='#4caf50' />
+        <Ionicons name='heart' size={36} color={Colors.green} />
       </TouchableOpacity>
     </View>
   )

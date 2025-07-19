@@ -16,10 +16,6 @@ A Tinder-style cat app built with React Native, Expo, and TypeScript.
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
-## API Configuration
-
-Replace the API key in `src/services/catApi.ts` with your own key from The Cat API.
-
 ## Testing
 
 Run tests with: `npm test`

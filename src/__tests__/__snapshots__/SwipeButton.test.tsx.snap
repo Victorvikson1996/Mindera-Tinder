@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwipeButton renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginVertical": 18,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "borderRadius": 40,
+        "elevation": 6,
+        "height": 64,
+        "justifyContent": "center",
+        "marginHorizontal": 18,
+        "opacity": 1,
+        "shadowColor": "#aaa",
+        "shadowOffset": {
+          "height": 5,
+          "width": 0,
+        },
+        "shadowOpacity": 0.14,
+        "shadowRadius": 8,
+        "width": 64,
+      }
+    }
+  >
+    <View
+      color="#EC537E"
+      name="close"
+      size={36}
+    />
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "borderRadius": 40,
+        "elevation": 6,
+        "height": 64,
+        "justifyContent": "center",
+        "marginHorizontal": 18,
+        "opacity": 1,
+        "shadowColor": "#aaa",
+        "shadowOffset": {
+          "height": 5,
+          "width": 0,
+        },
+        "shadowOpacity": 0.14,
+        "shadowRadius": 8,
+        "width": 64,
+      }
+    }
+  >
+    <View
+      color="#6BD88E"
+      name="heart"
+      size={36}
+    />
+  </View>
+</View>
+`;

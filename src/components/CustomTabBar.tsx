@@ -2,17 +2,18 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { Colors } from '@/utils/Colors';
 
 const { width } = Dimensions.get('window');
 
 const icons = [
-  { name: 'paw', route: 'Home', activeColor: '#e75480' },
+  { name: 'paw', route: 'Home', activeColor: Colors.paw },
   {
     name: 'chatbubble-outline',
     route: 'Counter',
-    activeColor: '#e75480'
+    activeColor: Colors.paw
   },
-  { name: 'person-outline', route: 'Profile', activeColor: '#e75480' }
+  { name: 'person-outline', route: 'Profile', activeColor: Colors.paw }
 ];
 
 export const CustomTabBar = ({
@@ -40,7 +41,7 @@ export const CustomTabBar = ({
               <Ionicons
                 name={icon.name as any}
                 size={24}
-                color={isFocused ? icon.activeColor : '#222'}
+                color={isFocused ? icon.activeColor : Colors.dark}
               />
             </TouchableOpacity>
           );
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     borderRadius: 50,
     width: width * 0.5,
     alignSelf: 'center',
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     width: 7,
     height: 7,
     borderRadius: 4,
-    backgroundColor: '#e75480',
+    backgroundColor: Colors.paw,
     marginTop: 4
   }
 });

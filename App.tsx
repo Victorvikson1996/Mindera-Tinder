@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
-import React, { useEffect, useState } from 'react';
-import { fetchCatBreeds, CatBreed } from './services/catApi';
+import { StyleSheet } from 'react-native';
+import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppNavigation } from '@/navigation/AppNavigation';
@@ -9,6 +8,7 @@ import { AppNavigation } from '@/navigation/AppNavigation';
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <StatusBar style='auto' />
       <NavigationContainer>
         <AppNavigation />
       </NavigationContainer>
